@@ -4,11 +4,18 @@ class Room(val price: Int, val address: String, val floor: Int, val description:
 
     fun measurePrice(roomPrice: Int): String {
 
-//        if (roomPrice >= 10000) {
-//            return "${roomPrice.}"
-//        }
+        // 01234 length=5
+        // 28500 -> 2억8,500
+        if (roomPrice >= 10000) {
+            var resultString: String = roomPrice.toString()
+            //resultString = resultString.slice() + "억" + resultString.slice(resultString.length.toInt() - 3, resultString.length)
 
-        return ""
+            return resultString
+        } else {
+
+            return ""
+        }
+
     }
 
     fun measureFloor(roomFloor: Int): String {
