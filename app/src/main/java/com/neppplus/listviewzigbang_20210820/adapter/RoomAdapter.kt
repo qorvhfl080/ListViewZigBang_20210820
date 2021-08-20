@@ -25,14 +25,12 @@ class RoomAdapter(val mContext: Context, val resId: Int, val mList: ArrayList<Ro
 
         val data = mList[position]
 
-        val roomImg = row.findViewById<ImageView>(R.id.roomImg)
         val priceTxt = row.findViewById<TextView>(R.id.priceTxt)
         val addressTxt = row.findViewById<TextView>(R.id.addressTxt)
         val descriptionTxt = row.findViewById<TextView>(R.id.descriptionTxt)
 
-        roomImg.setImageResource(data.img)
         priceTxt.text = "${data.price}"
-        addressTxt.text = data.address
+        addressTxt.text = "${data.address}, ${data.measureFloor(data.floor)}"
         descriptionTxt.text = data.description
 
         return row
