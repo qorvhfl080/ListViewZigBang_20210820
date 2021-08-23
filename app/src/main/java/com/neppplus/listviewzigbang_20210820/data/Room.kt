@@ -8,10 +8,6 @@ class Room(val price: Int, val address: String, val floor: Int, val description:
 
     fun measurePrice(roomPrice: Int): String {
 
-
-
-        // 01234 length=5
-        // 28500 -> 2억8,500
         if (roomPrice >= 10000) {
             val uk = roomPrice / 10000
             val rest = roomPrice % 10000
@@ -31,14 +27,14 @@ class Room(val price: Int, val address: String, val floor: Int, val description:
 
     }
 
-    fun measureFloor(roomFloor: Int): String {
+    fun measureFloor(): String {
 
-        if (roomFloor == 0) {
+        if (this.floor == 0) {
             return "반지하"
-        } else if (roomFloor < 0) {
-            return "지하${roomFloor * (-1)}층"
+        } else if (this.floor < 0) {
+            return "지하${-this.floor}층"
         } else {
-            return "${roomFloor}층"
+            return "${this.floor}층"
         }
 
     }
