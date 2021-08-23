@@ -1,10 +1,11 @@
 package com.neppplus.listviewzigbang_20210820.data
 
+import java.io.Serializable
 import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.*
 
-class Room(val price: Int, val address: String, val floor: Int, val description: String) {
+class Room(val price: Int, val address: String, val floor: Int, val description: String) : Serializable {
 
     fun measurePrice(roomPrice: Int): String {
 
