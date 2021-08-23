@@ -29,7 +29,7 @@ class RoomAdapter(val mContext: Context, val resId: Int, val mList: ArrayList<Ro
         val addressTxt = row.findViewById<TextView>(R.id.addressTxt)
         val descriptionTxt = row.findViewById<TextView>(R.id.descriptionTxt)
 
-        priceTxt.text = "${data.price}"
+        priceTxt.text = "${data.measurePrice(data.price)}"
         addressTxt.text = "${data.address}, ${data.measureFloor(data.floor)}"
         descriptionTxt.text = data.description
 
