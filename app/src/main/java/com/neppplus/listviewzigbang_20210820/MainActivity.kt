@@ -9,6 +9,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+//    주석용 branch
+
     val roomList = ArrayList<Room>()
 
     lateinit var roomAdapter: RoomAdapter
