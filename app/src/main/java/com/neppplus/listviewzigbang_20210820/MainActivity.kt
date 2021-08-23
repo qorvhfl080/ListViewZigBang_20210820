@@ -1,5 +1,6 @@
 package com.neppplus.listviewzigbang_20210820
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.neppplus.listviewzigbang_20210820.adapter.RoomAdapter
@@ -32,6 +33,18 @@ class MainActivity : AppCompatActivity() {
         roomAdapter = RoomAdapter(this, R.layout.room_list_item, roomList)
 
         roomListView.adapter = roomAdapter
+
+        roomListView.setOnItemClickListener { adapterView, view, position, l ->
+
+            val clickedRoom = roomList[position]
+
+            val myIntent = Intent(this, ViewRoomDetailActivity::class.java)
+
+            myIntent.putExtra("room", clickedRoom)
+
+            startActivity(myIntent)
+
+        }
 
     }
 }
